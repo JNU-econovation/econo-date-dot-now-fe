@@ -1,0 +1,142 @@
+
+.emailBox{
+    display: flex;
+}
+body{
+    background-color: #F9F9F9;
+    width: 100vw;
+    height: 100vh;
+    
+}
+.Logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25vh;
+
+}
+.Logo a{
+    color: #F67777;
+    font-size:40px;
+}
+a{
+    text-decoration: none;
+}
+.emailBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+.signUp{
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1.3vh;
+    position: relative;
+    right: 9vw;
+}
+
+.signUp a{
+    color:rgb(162, 161, 161)
+    
+}
+
+.password{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5vh;
+}
+.logInButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:23vw ;
+    height:8vh;  
+    background-color: #F67777;
+}
+
+.logInButton a{
+    color:#F9F9F9;
+    font-size: 20px;
+    font-weight: 700;
+}
+.logInButtonflex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.emailBoxDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2vh;
+}
+#passwordbox{
+    width:22vw;
+    height: 7vh;
+    font-size: 17px;
+    padding-left: 1vw;
+}
+#email1{
+    width:22vw;
+    height: 7vh;
+    font-size: 17px;
+    padding-left: 1vw;
+}
+#golbeng{
+    padding: 2vh;
+}
+
+.BorderColor{
+    border: 1px solid rgb(201, 201, 201);
+    border-radius :5px;
+}
+input:focus{
+    outline: none;
+    border: 1px solid #F67777;
+}
+
+.logInButton:hover{
+    transition:0.2s ;
+    background-color: #f26666;
+}
+.signUp a:hover{
+    text-decoration: underline;
+    transition:0.2s ;
+}
+.BorderColor::placeholder{
+    color:rgb(175, 175, 175)
+}
+
+.errorMessage{
+    display: flex;
+    justify-content:center;
+    position: relative;
+    right: 7vw;
+    bottom: 3vh;
+    font-size: 12px;
+    color:#ff0505;
+}
+
+/*
+#email2 option:focus{
+    outline: none;
+    border: 1px solid #F67777;
+}
+#email2{
+    width:9.5vw;
+    height: 7.5vh;
+    text-align-last: center;
+    text-align: center;
+    font-size: 17px;
+    border-radius :5px;
+    border: 1px solid rgb(201, 201, 201);
+}
+
+#email2 option{
+    height: 5vh;
+}
+*/
