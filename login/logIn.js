@@ -4,21 +4,24 @@
 const email = document.querySelector("#email1"), 
     psword = document.querySelector("#passwordbox"),
     loginBtn = document.querySelector(".logInButton"),
-    eM = document.querySelector(".errorMessage");
+    eM = document.querySelector(".errorMessage"),
+    form = document.querySelector("form");
+
 
 let check="";
 loginBtn.addEventListener("click",login);
 
-email.addEventListener("keyup",enterkey);
-psword.addEventListener("keyup",enterkey);
+form.addEventListener("keyup",enterkey);
 
-
+//폼에 이벤트 폼 submit,a 태그 를 eventpreveDefault 폼 하나로 다 할필요는 없음
+// 폼  
+//게시판 토스트 ui api 
 function enterkey(event) {
 	if (event.keyCode === 13) {
         login1();
     }
 }
-
+//d
 
  //엔터를 하려면 preventDefault()를 못 읽나 ?
 
