@@ -27,7 +27,10 @@ a{
     justify-content: center;
     align-items: center;
     padding-top: 50px;
+    flex-direction:column;
+    margin-bottom: 6vh;
 }
+
 .signUp{
     font-size: 15px;
     display: flex;
@@ -72,7 +75,7 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 2vh;
+    padding-bottom:2vh;
 }
 #passwordbox{
     width:22vw;

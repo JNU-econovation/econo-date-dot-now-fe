@@ -104,35 +104,7 @@ function signIn(event){
     else{
         certiWarn.innerText="";
         }    
-
-
-            /*
-            fetch("//url//", {
-                method: "POST",
-                headers:{
-                    "Content-Type": "application/json",
-                },
-                body : JSON.stringify(signInUserInfo),
-            })
-                .then((res) => res.json())
-                .then((res) => {
-                    if (res.success){ //유효성 검사. 로그인 성공의 key값이 success라면 
-                        location.href = " "; // 로그인 성공 시 이동 링크(홈화면링크)
-                    }else {
-                        //로그인 안됐을때. 빨간 글씨로 경고 문자 띄우기. (이메일 또는 비번 잘못입력했습니다)
-                    }         
-                })
-                .catch((err)=> {
-                    console.error(new Error("로그인 에러 발생"));
-                }); // 에러났을 때 ...
-            */
         
         console.log(signInUserInfo);}
     
-
-    
-
-
-    
-
     signInBtn.addEventListener("click",signIn);
