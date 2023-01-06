@@ -10,17 +10,23 @@ const maxPage = Math.ceil(numOfContent / maxContent);
 let page = 1;
 
 
-function makeContents(postOption,title,postContents,profilePhoto,profileName,userLook){
+function makeContents(location,postOption,title,postContents,profilePhoto,profileName,userLook){
     const content = document.createElement("li");
     content.classList.add("box");
     content.innerHTML = 
-    `<img src="https://placeimg.com/390/250" alt="">
-    <div id="title">
+    `
+    <img src="https://placeimg.com/390/250" alt="">
+    
+    <div class="blackBox">
+        <i class="fa-solid fa-location-dot"></i>
+        <p>${location}</p></div>
+
+    <div id="title" >
         <span>${postOption}</span>
         <span>${title}</span>
     </div>
-    <div id="postContents">${postContents}</div>
-    <div class="userAndLook">
+    <div id="postContents" >${postContents}</div>
+    <div class="userAndLook" >
         <div id="user">
             <img src=${profilePhoto} alt="">
             <span>${profileName}</span>
@@ -39,15 +45,8 @@ function makeContents(postOption,title,postContents,profilePhoto,profileName,use
 
 
     
-/*
-var postsClick= document.querySelector(".box img:first-child");
-function transPost(link){
-    window.location = link;
-}
 
-postsClick.addEventListener("click",transPost('https://nohack.tistory.com/125'));
 
-*/
 
 //밑에 페이지 태그
 const makeButton = (id) => {
@@ -56,7 +55,8 @@ const makeButton = (id) => {
     button.dataset.num = id;
     button.innerText = id;
     button.addEventListener("click", (e) => {
-        Array.prototype.forEach.call(pageButtons.children, (button) => {
+        //Array.prototype.forEach.call(pageButtons.children, (button) => {
+        [].forEach.call(pageButtons.children, (button) => {
         if (button.dataset.num) button.classList.remove("active");
         });
         e.target.classList.add("active");
@@ -64,7 +64,7 @@ const makeButton = (id) => {
     });
     return button;
     };
-
+//위에button -> buttons 로 바꾸고 buttons.forEach(button넣기) 로 
 ///////////////////////////////////////////////////
 
 const goPrevPage = () => {
@@ -103,7 +103,7 @@ const renderContent = (page) => {
     
     // 글의 최대 개수를 넘지 않는 선에서, 화면에 최대 10개의 글 생성
     for (let id = (page - 1) * maxContent + 1; id <= page * maxContent && id <= numOfContent; id++) {
-        makeContents("맛집탐방",`${id}감성카페랑 제목`,"안녕하세요 포스트 내용이 들어갈 자리 입니다.","https://placeimg.com/25/25","에코노","100" );
+        makeContents("동명동","맛집탐방",`${id}감성카페랑 제목`,"안녕하세요 포스트 내용이 들어갈 자리 입니다.","https://placeimg.com/25/25","에코노","100" );
 
 
     }
@@ -138,6 +138,16 @@ const renderContent = (page) => {
   render(page);
 
 
-/////////////////////
+////////////////////////////////////////////////////////
 
 
+const postsClicks = document.querySelectorAll(".box img:nth-child(2n + 1)");
+function transPost(link, event){
+    event.preventDefault();
+    window.location = link;
+}
+postsClicks.forEach(postClick => postClick.addEventListener("click", (event) => {transPost('https://nohack.tistory.com/125', event)}));
+
+/* uri 형식
+`/post/${postId}`
+*/
