@@ -16,7 +16,7 @@ function makeContents(location,postOption,title,postContents,profilePhoto,profil
     content.innerHTML = 
     `
     <img src="https://placeimg.com/390/250" alt="">
-    
+    <div class="hashTag">#맛집 #힐링</div>
     <div class="blackBox">
         <i class="fa-solid fa-location-dot"></i>
         <p>${location}</p></div>
@@ -50,10 +50,11 @@ function makeContents(location,postOption,title,postContents,profilePhoto,profil
 
 //밑에 페이지 태그
 const makeButton = (id) => {
-    const button = document.createElement("pageButtons");
+    const button = document.createElement("Button");
     button.classList.add("button");
     button.dataset.num = id;
     button.innerText = id;
+    //button이라는 버튼을 만들고 클래스는 button, num은 id값, html에 id값을 넣어줌
     button.addEventListener("click", (e) => {
         //Array.prototype.forEach.call(pageButtons.children, (button) => {
         [].forEach.call(pageButtons.children, (button) => {
@@ -61,10 +62,15 @@ const makeButton = (id) => {
         });
         e.target.classList.add("active");
         renderContent(parseInt(e.target.dataset.num));
-    });
+    });//버튼 클릭 시 페이지버튼의 자식요소들마다 콜백함수 실행,
+    // 콜백함수는 버튼의 num이 0이 아니면() 버튼의 클래스 active지움.
+    // 이때 클래스 active는 색깔 빨갛게 변하는 것.
+    // e.target은 특정 이벤트가 발생하는 태그 가져옴.->버튼 클릭 시 active 클래스 됨.(빨게짐)
+    //renderContent함수 실행(클릭한 버튼의 num을 renderContent함수에 전달.)
+    //                                 ->
     return button;
     };
-//위에button -> buttons 로 바꾸고 buttons.forEach(button넣기) 로 
+//위에 button -> buttons 로 바꾸고 buttons.forEach(button넣기) 로 
 ///////////////////////////////////////////////////
 
 const goPrevPage = () => {
@@ -115,7 +121,7 @@ const renderContent = (page) => {
         pageButtons.removeChild(pageButtons.lastChild);
       }
     
-    // 화면에 최대 5개의 페이지 버튼 생성
+    // 화면에 최대 10개의 페이지 버튼 생성
     for (let id = page; id < page + maxButton && id <= maxPage; id++) {
         pageButtons.appendChild(makeButton(id));
     }
@@ -141,13 +147,18 @@ const renderContent = (page) => {
 ////////////////////////////////////////////////////////
 
 
-const postsClicks = document.querySelectorAll(".box img:nth-child(2n + 1)");
-function transPost(link, event){
-    event.preventDefault();
+const postsClicks = document.querySelectorAll(".box img:first-child");
+function transPost(link){
     window.location = link;
 }
-postsClicks.forEach(postClick => postClick.addEventListener("click", (event) => {transPost('https://nohack.tistory.com/125', event)}));
+postsClicks.forEach(postClick => postClick.addEventListener("click", () => {transPost('https://nohack.tistory.com/125')}));
 
 /* uri 형식
 `/post/${postId}`
 */
+
+
+const mainButton = document.querySelector(".mainButton button");
+mainButton.addEventListener('click',function(){
+  window.location = 'http://127.0.0.1:5500/contentPage/content.html';
+});
