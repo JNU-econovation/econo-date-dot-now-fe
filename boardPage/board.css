@@ -196,7 +196,7 @@ a{
     margin:10px;
     font-size: 17px;
     position: relative;
-    bottom:55px;
+    bottom:75px;
 }
 #look{
     color:#8b8b8b;
@@ -221,13 +221,13 @@ a{
     margin-top: 10px;
     margin-bottom: 10px;
     position: relative;
-    bottom:55px;
+    bottom:75px;
     font-weight: 600;
 }
 #postContents{
     font-size: 13px;
     position: relative;
-    bottom:55px;
+    bottom:75px;
 }
 .pageButtons{
     position:absolute;
@@ -238,7 +238,7 @@ a{
 }
 .button{
     border: 0;
-    margin:10px;
+    margin:8px;
     background-color: #F9F9F9;
     font-size: 15px;
 
@@ -274,7 +274,7 @@ a{
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.493);
     position: relative;
-    bottom:35.3vh;
+    bottom:37.7vh;
     margin-bottom: 0;
     display: flex;
     border-top-left-radius:15px ;
@@ -284,7 +284,22 @@ a{
 .blackBox i, .blackBox p{
     z-index: 3;
     color: #F9F9F9;
-    margin-left: 10px;
+    margin-left: 15px;
+    position: relative;
+    left: 10px;
 }
 
+.blackBox i{
+    position: relative;
+    top:20px;
+    
+}
 
+.hashTag{
+    position: relative;
+    bottom: 39vh;
+    margin-bottom: 0;
+    font-size: 13px;
+    color: #7e7e7e;
+    font-weight: 600;
+}

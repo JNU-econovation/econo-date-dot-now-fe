@@ -215,13 +215,15 @@ i {
         border-radius: 10px;
         overflow: hidden;
         
+        width: 340px;
+        
     
     }
-.sliders li a{
-    position: absolute;
-    bottom: 10px;
-    font-size: 13px;
-}
+    .sliders li a{
+        
+        font-size: 13px;
+        
+    }
 
 .bottomLetter{
     display: flex;
@@ -300,4 +302,11 @@ i {
 }
 .sliders2 li img:hover{
     filter: brightness(100%);
+}
+
+
+.sliders li p:nth-child(2n){
+    font-size: 23px;
+    font-weight: 500;
+    
 }
