@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="content.css">
+    <script src="content.js" defer></script>
+    <script src="corab.js" defer></script>
+    <script src="map.js" defer></script>
+    <script src="hashtag.js" defer></script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/bf97a45c75.js" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ku6p4pvckf"></script>
+
+
+
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+</head>
+<body>
+    
+<section class="reg-box">
+	<form class="firstForm">
+        <div class="totalboradBox">
+            <div class="putInPhoto"> 
+                <img src="https://i0.wp.com/adventure.co.kr/wp-content/uploads/2020/09/no-image.jpg" 
+            class="image-box" />
+                <input 
+                type="file"
+                id="ex_file2" 
+                accept=".gif, .jpg, .png" name="images" >
+            
+            </input>
+            
+            </div>
+            <div class="jj">
+                <div class="title-wrapper">
+                    <input class="boardTitle" contenteditable="true" placeholder="제목을 입력하세요">
+                    
+                <div class="buttons">
+                    <input type="button" class="BOLD" value="B"
+                        onclick="document.execCommand('bold')" />
+                    <button type="button" class="aignLeft"
+                        onclick="document.execCommand('justifyleft')">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <button type="button" class="aignCenter"
+                        onclick="document.execCommand('justifycenter')">
+                        <i class="fas fa-align-center"></i>
+                    </button>
+                    <button type="button" class="aignRight" value="오른쪽 정렬"
+                        onclick="document.execCommand('justifyright')">
+                        <i class="fas fa-align-right"></i>
+                    </button>
+                    
+                    <div class="filebox">
+                        <label for="ex_file2">
+                            <i class="fa-solid fa-image"></i>
+                        </label>
+                    </div>
+                    <p id="cautionImage">*이미지는 1장까지만 가능합니다.</p>
+                    
+                     </div>
+               
+                    <div class="content" name="content" contenteditable="true"></div>
+                </div>    
+            </div>
+            
+        </div>
+        
+       
+        <ul class="corabBox">
+            <li class="firstLi">
+                <div>
+                    <div>
+                        <div class="corab1">
+                            예상비용*
+                        </div>
+                        <input placeholder="숫자로 입력" name="content" contenteditable="true" id="firstcorab">
+            
+                        </input>
+            
+                    </div>
+                    <div>
+                        <div class="corab3">
+                            예상시간*
+                        </div>
+                        <input  placeholder="숫자로 입력" name="content" contenteditable="true" id="secondcorab">
+            
+                        </input>
+            
+                    </div>
+                </div>
+                <div>
+                    <input class="corab" id="cc" contenteditable="true" placeholder="위치 혹은 장소를 입력해 주세요." >
+            
+                    </input>
+                    <div class="corab"id="aa" name="content" contenteditable="true">
+            
+                    </div>
+            
+                </div>
+                <div class="plusBtn">
+                   
+                    <i class="fa-solid fa-circle-plus"></i>
+                    
+               
+            </li>
+
+        </ul>
+        <div class="finalBtn"><p>총 예상 비용&총 예상 시간 확인하기</p>
+            </div>
+        <div class="finalBox">
+            
+            <div >
+                <p>총 예상 비용:</p>
+                <p id="final1">0</p>
+                <p>원</p>
+            </div>
+            <div>
+                <p>총 예상 시간:</p>
+                <p  id="final2">0</p>
+                <p>시간</p>
+            </div>
+    
+            
+        </div>
+        
+        <div class="background">
+        
+            
+            <div class="search">
+                <input id="address" type="text" placeholder="주소를 입력하세요">
+                <input id="submit" type="button" value="+">
+            </div>
+            <div id="map" style="width:80%;height:500px;"></div>
+        
+
+            <div class="inputAddress">
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>주소</th>
+                                <th>경도</th>
+                                <th>위도</th>
+                            </tr>	
+                        </thead>
+                        <tbody id="mapList"></tbody>
+                    </table>
+                </div>
+            </div>
+        
+            <input class="hashTag" type="text"
+            placeholder="#태그입력"
+            >
+            
+            <ul class="hashTagList">
+            </ul>
+            <hr class="sun">
+            <div class="submitBtn">발행하기</div>   
+        </div>
+         
+	</form>
+    
+    
+    </section>
+    
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=ku6p4pvckf&submodules=geocoder"></script>
+    
+</body>
+</html>

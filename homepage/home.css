@@ -1,7 +1,7 @@
 body{
     background-color: #F9F9F9;
     width: 100vw;
-    height: 350vh;
+    height: 300vh;
     background-image: url('../homepage/snow-gb26d35647_1920.jpg');
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
@@ -262,7 +262,7 @@ i {
         padding: 0;
         width: 2000px;
         display: flex;
-        margin-left: 3px;
+        margin-left: 2.5vw;
         
         border-radius: 10px;
 }
@@ -275,6 +275,9 @@ i {
 .sliders2 li img{
     filter: brightness(50%);
     transition: 0.3s ease-out;
+
+    width: 283px;
+    height: 450px;
     }
 
 
@@ -294,8 +297,9 @@ i {
     margin-left: 25px;
 }
 .slideWrapper2 p{
-    font-size: 23px;
+    font-size: 25px;
     font-weight: 600;
+    margin-top: 8vh;
 }
 .slideWrapper2 a{
     font-size: 13px;
