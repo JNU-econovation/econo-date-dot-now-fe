@@ -219,7 +219,7 @@ submitButton.addEventListener('click',(e)=>{
             category : "맛집탐방", //정해야됨
             postMapList : costInfo,
             mapList : addressInformation,
-        
+            
             id: Date.now(),
             imageUrl: fileDOM.value,
             createdAt: now,  // 시분초도 같이 보내야 하는지 물어보기
