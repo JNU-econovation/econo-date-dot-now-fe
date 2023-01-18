@@ -23,50 +23,54 @@
 <body>
     
 <section class="reg-box">
-	<form>
-		<div class="title-wrapper">
-		<input class="boardTitle" contenteditable="true" placeholder="제목을 입력하세요">
-        
-        </input>
-        
-		</div>
-		<div class="buttons">
-			<input type="button" class="BOLD" value="B"
-				onclick="document.execCommand('bold')" />
-			<button type="button" class="aignLeft"
-				onclick="document.execCommand('justifyleft')">
-				<i class="fas fa-align-left"></i>
-			</button>
-			<button type="button" class="aignCenter"
-				onclick="document.execCommand('justifycenter')">
-				<i class="fas fa-align-center"></i>
-			</button>
-			<button type="button" class="aignRight" value="오른쪽 정렬"
-				onclick="document.execCommand('justifyright')">
-				<i class="fas fa-align-right"></i>
-			</button>
-			
-            <div class="filebox">
-                <label for="ex_file2">
-                    <i class="fa-solid fa-image"></i>
-                  </label>
-                
-                
-                
+	<form class="firstForm">
+        <div class="totalboradBox">
+            <div class="putInPhoto"> 
+                <img src="https://i0.wp.com/adventure.co.kr/wp-content/uploads/2020/09/no-image.jpg" 
+            class="image-box" />
+                <input 
+                type="file"
+                id="ex_file2" 
+                accept=".gif, .jpg, .png" name="images" >
+            
+            </input>
+            
             </div>
-            <p id="cautionImage">*이미지는 1장까지만 가능합니다.</p>
-			
-		</div>
-       
-        <div class="content" name="content" contenteditable="true"></div>
-        <div class="putInPhoto"> 
-            <img src="https://i0.wp.com/adventure.co.kr/wp-content/uploads/2020/09/no-image.jpg" 
-        class="image-box" />
-            <input 
-            type="file"
-            id="ex_file2" 
-            accept=".gif, .jpg, .png" name="images" >
+            <div class="jj">
+                <div class="title-wrapper">
+                    <input class="boardTitle" contenteditable="true" placeholder="제목을 입력하세요">
+                    
+                <div class="buttons">
+                    <input type="button" class="BOLD" value="B"
+                        onclick="document.execCommand('bold')" />
+                    <button type="button" class="aignLeft"
+                        onclick="document.execCommand('justifyleft')">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <button type="button" class="aignCenter"
+                        onclick="document.execCommand('justifycenter')">
+                        <i class="fas fa-align-center"></i>
+                    </button>
+                    <button type="button" class="aignRight" value="오른쪽 정렬"
+                        onclick="document.execCommand('justifyright')">
+                        <i class="fas fa-align-right"></i>
+                    </button>
+                    
+                    <div class="filebox">
+                        <label for="ex_file2">
+                            <i class="fa-solid fa-image"></i>
+                        </label>
+                    </div>
+                    <p id="cautionImage">*이미지는 1장까지만 가능합니다.</p>
+                    
+                     </div>
+               
+                    <div class="content" name="content" contenteditable="true"></div>
+                </div>    
+            </div>
+            
         </div>
+        
        
         <ul class="corabBox">
             <li class="firstLi">
@@ -91,7 +95,7 @@
                     </div>
                 </div>
                 <div>
-                    <input class="corab" id="cc" contenteditable="true" placeholder="위치 혹은 장소 이름을 입력해 주세요." >
+                    <input class="corab" id="cc" contenteditable="true" placeholder="위치 혹은 장소를 입력해 주세요." >
             
                     </input>
                     <div class="corab"id="aa" name="content" contenteditable="true">
@@ -124,42 +128,46 @@
     
             
         </div>
-        <hr class="line">
-
-        <div id="map" style="width:80%;height:500px;"></div>
-    
-
-        <div class="search">
-            <input id="address" type="text" placeholder="주소를 입력하세요">
-            <input id="submit" type="button" value="+">
-        </div>
-        <div id="map" style="width:800px;height:500px;"></div>
-       
-        <div class="inputAddress">
-            <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>주소</th>
-                            <th>위도</th>
-                            <th>경도</th>
-                        </tr>	
-                    </thead>
-                    <tbody id="mapList"></tbody>
-                </table>
+        
+        <div class="background">
+        
+            
+            <div class="search">
+                <input id="address" type="text" placeholder="주소를 입력하세요">
+                <input id="submit" type="button" value="+">
             </div>
-        </div>
+            <div id="map" style="width:80%;height:500px;"></div>
+        
 
-        <input class="hashTag" type="text"
-         placeholder="#태그입력"
-          >
+            <div class="inputAddress">
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>주소</th>
+                                <th>경도</th>
+                                <th>위도</th>
+                            </tr>	
+                        </thead>
+                        <tbody id="mapList"></tbody>
+                    </table>
+                </div>
+            </div>
+        
+            <input class="hashTag" type="text"
+            placeholder="#태그입력"
+            >
+            
+            <ul class="hashTagList">
+            </ul>
+            <hr class="sun">
+            <div class="submitBtn">발행하기</div>   
+        </div>
          
-        <ul class="hashTagList">
-        </ul>
-        <hr class="sun">
-        <button class="submitBtn">발행하기</button>
 	</form>
     
+    
+    </section>
     
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=ku6p4pvckf&submodules=geocoder"></script>
     

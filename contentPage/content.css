@@ -1,7 +1,7 @@
 body{
     background-color: #F9F9F9;
     width: 100vw;
-    height: 300vh;
+    height: 320vh;
     margin:0;
 }
 
@@ -11,7 +11,7 @@ body{
 
   .buttons {
     display: flex;
-    margin-left:7vw ;
+    margin-left:2vw ;
     position:sticky;
     top: 0px;
     
@@ -27,16 +27,19 @@ body{
     background-color: #ffffff;
     font-size: 20px;
     color: rgb(150, 150, 150);
+
 }
 
 .buttons input{
     font-weight: 700;
     font-size: 23px;
 }
-.reg-box form{
+.firstForm{
     background-color: rgb(255, 255, 255);
     margin:5vh 7vw ;
-    height: 118vh;
+    height: 208vh;
+    overflow: none;
+  
 }
 
 .buttons input:hover, .buttons button:hover,.filebox label i:hover{
@@ -45,13 +48,14 @@ body{
 
 .boardTitle{
     font-size: 45px;
-    width: 69vw;
+    width: 29vw;
     height: 15vh;
     border: 0;
-    margin: 5vh 0 0 7vw;
+    margin: 5vh 0 0 2vw;
     padding-left: 2vw;
     padding-top: 3vh;
-    border-bottom: 2px solid rgb(199, 199, 199);
+    border-bottom: 2px solid rgb(225, 225, 225);
+    z-index: 1000;
 }
 .boardTitle::placeholder{
     font-size: 45px;
@@ -79,15 +83,15 @@ body{
 
 .content{
     font-size: 20px;
-    width: 79vw;
-    height: 55vh;
+    width: 32vw;
+    height: 40vh;
     border: 0;
-    margin-left:7vw;
-    padding-left: 7vw;
+    margin-left:0vw;
+    padding-left: 1vw;
+    
     padding-top: 3vh;
     background-color: #ffffff;
-    position: relative;
-    right: 7vw;
+    
     padding-bottom:5vh;
     margin-bottom: 2vh;
     overflow: auto;
@@ -107,7 +111,9 @@ body{
 .content:focus{
     outline: none;
 }
-
+.putInPhoto input{
+    display: none;
+}
 #cautionImage{
     margin-left: 15px;
     font-size: 11px;
@@ -116,14 +122,21 @@ body{
     top:10px;
 }
 
+.totalboradBox{
+    display: flex;
+}
 
 
-
+.jj{
+    margin-left: 3vw;
+}
 
 .image-box {
-    width: 35px;
-    height: 35px;
-    margin-right: 10px;
+    width: 630px;
+    height: 500px;
+    margin-right: 0px;
+    margin-top:70px;
+    margin-left: 70px;
     
     
   }
@@ -172,7 +185,7 @@ input.corab::placeholder{
 .corabBox{
     background-color: #ffffff;
     margin-top: 10vh;
-    padding-bottom: 20vh;
+    padding-bottom: 5vh;
 }
 li.firstLi{
     margin-right: 9vw;
@@ -275,12 +288,14 @@ li.firstLi{
     display: flex;
     justify-content:space-around;
     
-    height: 11vh;
+    height: 10vh;
     width: 86vw;
     background-color: #ebeaea;
     font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 0;
     position: relative;
-    bottom: 15vh;
+    bottom:12vh;
     
 }
 .finalBox div:first-child{
@@ -307,19 +322,22 @@ li.firstLi{
     position: relative;
     right: 8.7vw;
     margin:0;
-    
+    margin-bottom: 0;
 }
 
 .finalBtn{
     background-color: #cacaca;
     width: 25vw;
-    height: 11vh;
+    height: 10vh;
     z-index: 300;
-    position: relative;
-    bottom: 4vh;
+    
     text-align: center;
+    position: relative;
+    bottom:2vh;
+    
     
 }
+
 .finalBtn:hover{
     background-color: #b4b4b4;
 }
@@ -330,22 +348,16 @@ li.firstLi{
     top: 50%;
     transform: translateY(-50%);
 }
-.line{
-    width: 90%;
-    border: 1px solid rgb(227, 227, 227);
-    position: relative;
-    bottom: 6vh;
-}
+
 
 #map{
     margin-left: 9vw;
     border-radius: 20px;
-    margin-top: 10vh;
+    margin-top: 5vh;
 
 }
 .search{
-    position: relative;
-    bottom: 78vh;
+    
     display: flex;
     justify-content: center;
     
@@ -371,8 +383,7 @@ li.firstLi{
     font-weight: 100;
 }
 .inputAddress{
-    position: relative;
-    bottom: 80vh;
+    
     margin-left: 8vw;
 }
 
@@ -381,54 +392,61 @@ li.firstLi{
 }
 
 .submitBtn{
-    position: relative;
-    bottom: 40vh;
-    left: 9vw;
+    
+   
     width: 70vw;
     margin-right: 1vw;
-    height: 7vh;
-    color: #ffffff;
+    margin-left: 9vw;
+    height: 5vh;
+    color: #F9F9F9;
     background-color: #F67777;
     border-radius: 10px;
     border: 0px;
     font-size: 20px;
     font-weight: 600;
+    text-align: center;
+    padding-top: 2vh;
+    margin-top:5vh;
+    margin-bottom:20vh;
+}
+.submitBtn:hover{
+    background-color: #e67373;
 }
 
 .hashTag{
-    position: relative;
-    bottom:53vh;
+    
     margin-left: 8vw;
     width: 70vw;
     padding-left: 1vw;
     height: 6vh;
     border: 1px solid rgb(215, 215, 215);
     border-radius: 10px;
+    margin-top:15vh
 }
 
 .sun{
-    position: relative;
-    bottom:50vh;
+    
     
     width: 90%;
     border: 0.5px solid rgb(226, 226, 226);
-    
-   
     
 }
 
 .hashTagList{
     display: flex;
-    position: relative;
-    bottom:50vh;
-    margin-left: 3vw;
-    
-
+    margin-left: 5vw;
+    margin-top:4vh;
+   
 }
 .hashTagList li{
     margin-right: 1vw;
-    background-color: #d7d7d7;
+    background-color: #e6e6e6;
+    font-weight: 600;
 }
 .hashTagList li i{
     color: #acacac;
+}
+.background{
+    background-color: #F9F9F9;
+    padding-top: 10vh;
 }

@@ -8,7 +8,6 @@ const   slide= document.querySelectorAll(".sliders li"),
     slider2Img5=document.querySelector("#section25"),
     slideWidth=340,
     slideMargin=20,
-    
     prevBtn= document.querySelector("#leftI"), 
     nextBtn= document.querySelector("#rightI");
     
@@ -97,7 +96,10 @@ function moveSlide(num){
     };
 
 }
+////////////////////
 
+const hwBtn=document.querySelector("#hWBtn");
 
-
-
+hwBtn.addEventListener('click',()=>{
+    window.location = 'http://127.0.0.1:5500/research/research.html';
+})

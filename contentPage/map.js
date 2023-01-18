@@ -28,7 +28,7 @@ function searchAddressToCoordinate(address) {
         }
 
         insertAddress(item.roadAddress, item.x, item.y);
-        addressInformation.push({address:item.roadAddress,latitude:item.x,longitude:item.y});
+        addressInformation.push({keyword:item.roadAddress,lat:item.x,lng:item.y});
     });
 }
 

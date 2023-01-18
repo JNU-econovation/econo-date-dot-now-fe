@@ -58,8 +58,9 @@ const makeButton = (id) => {
     button.addEventListener("click", (e) => {
         //Array.prototype.forEach.call(pageButtons.children, (button) => {
         [].forEach.call(pageButtons.children, (button) => {
+         // pageButtons.forEach((button) => {
         if (button.dataset.num) button.classList.remove("active");
-        });
+        });// 콜백함수 사용이유가 
         e.target.classList.add("active");
         renderContent(parseInt(e.target.dataset.num));
     });//버튼 클릭 시 페이지버튼의 자식요소들마다 콜백함수 실행,
