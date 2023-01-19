@@ -24,6 +24,7 @@ function login() {
         console.log(emailInput.value, pswordInput.value);
 
         axios.post("", {email: emailInput.value, password: pswordInput.value})
+        location.href="../boardPage"
     }
 }
 
