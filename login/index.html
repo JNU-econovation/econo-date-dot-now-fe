@@ -4,40 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>로그인 - Date.now()</title>
     <link rel="stylesheet" href="login.css">
     <script src="logIn.js" defer></script>
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
 </head>
 <body>
-    <div class="Logo"><a href="">Date.now()</a>
-    </div>
-    <div>
-        <form action="" class="emailBox">
-            <div class="emailBoxDiv">
-                <input id="email1" type="text" placeholder="이메일" class="BorderColor">
-            <p>
-            </p>
-            </div>
-                <input id="passwordbox" type="password" name="" placeholder="비밀번호" class="BorderColor">
-                
-            
-        </form>
-        
-       
-        
-        <div class="errorMessage"></div>
-        <div class=" logInButtonflex">
-            <div class="logInButton"><a href=""> 로그인</a>
-            </div>
+    <a class="logo" href="">Date.now()</a>
+
+    <form class="login-form">
+        <div class="input-container">
+            <input id="email" type="text" placeholder="이메일">
+            <input id="password" type="password" name="" placeholder="비밀번호">
         </div>
-    
-        <div class="signUp"><a href="http://127.0.0.1:5500/signUp/signup.html" >회원가입</a></div>
-        
 
-       
-        
+        <div class="error-message"></div>
 
-    </div>
-    
+        <button type="submit" class="login-button">
+            로그인
+        </button>
+
+        <div class="sign-up-container">
+            <a class="sign-up" href="../signUp" >회원가입</a>
+        </div>
+
+    </form>
+
 </body>
 </html>
