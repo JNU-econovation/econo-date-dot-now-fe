@@ -12,7 +12,7 @@ body{
   .buttons {
     display: flex;
     margin-left:2vw ;
-    position:sticky;
+    
     top: 0px;
     
     background-color: #ffffff;
@@ -20,20 +20,8 @@ body{
     z-index: 100;
   }
 
-.buttons input, .buttons button{
-    
-    border:0;
-    margin: 0.7vw;
-    background-color: #ffffff;
-    font-size: 20px;
-    color: rgb(150, 150, 150);
 
-}
 
-.buttons input{
-    font-weight: 700;
-    font-size: 23px;
-}
 .firstForm{
     background-color: rgb(255, 255, 255);
     margin:5vh 7vw ;
@@ -48,7 +36,7 @@ body{
 
 .boardTitle{
     font-size: 45px;
-    width: 29vw;
+    width: 30vw;
     height: 15vh;
     border: 0;
     margin: 5vh 0 0 2vw;
@@ -72,54 +60,34 @@ body{
     color: rgb(150, 150, 150);
     padding: 0;
 }
-.filebox::before{
+.imgfile::before{
     content: " |";
     font-weight: 100;
     font-size: 20px;
     margin-left: 1vw;
     color: rgb(204, 204, 204);
 }
-
-
-.content{
-    font-size: 20px;
-    width: 32vw;
-    height: 40vh;
-    border: 0;
-    margin-left:0vw;
-    padding-left: 1vw;
-    
-    padding-top: 3vh;
-    background-color: #ffffff;
-    
-    padding-bottom:5vh;
-    margin-bottom: 2vh;
-    overflow: auto;
-}
-.content::-webkit-scrollbar{
-    width: 5px;
-    
-}
-.content::-webkit-scrollbar-thumb {
-    background: rgb(255, 149, 149);
-    height: 20%;
-}
-.content::-webkit-scrollbar-track {
-    background: rgba(255, 127, 161, 0.1);  /*스크롤바 뒷 배경 색상*/
+.filebox{
+    margin-left:5vw ;
 }
 
-.content:focus{
-    outline: none;
-}
 .putInPhoto input{
     display: none;
 }
 #cautionImage{
-    margin-left: 15px;
+    
     font-size: 11px;
     color: rgb(142, 142, 142);
     position: relative;
-    top:10px;
+    
+    left: 10vw;
+    bottom: 2vh;
+}
+.questionWhere{
+    border: none;
+    width: 10vw;
+    height: 7vh;
+    font-size: 15px;
 }
 
 .totalboradBox{
@@ -132,8 +100,8 @@ body{
 }
 
 .image-box {
-    width: 630px;
-    height: 500px;
+    width: 570px;
+    height: 450px;
     margin-right: 0px;
     margin-top:70px;
     margin-left: 70px;
@@ -449,4 +417,13 @@ li.firstLi{
 .background{
     background-color: #F9F9F9;
     padding-top: 10vh;
+}
+
+#editor {
+    /* border : 1px solid; */
+    width : 100%;
+    height: 90vh;
+    
+    font-size: 20px;
+    margin-top: 3vh;
 }

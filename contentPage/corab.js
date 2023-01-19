@@ -1,3 +1,6 @@
+
+
+
 const corabUl = document.querySelector(".corabBox");
 
 const plusBtn = document.querySelector(".plusBtn i");
@@ -10,7 +13,7 @@ const secondcorab=document.querySelector("#secondcorab");
 const cc=document.querySelector("#cc");
 const aa=document.querySelector("#aa");
 const submitButton=document.querySelector(".submitBtn");
-
+const category= document.querySelector(".questionWhere");
 
 let id=1;
 const costInfo = [];
@@ -139,7 +142,7 @@ function makeHashtags(){
     hash.dataset.num=Date.now();
     
     
-    hash.innerHTML = `#${hashTag.value} `;
+    hash.innerHTML = `#${hashTag.value}`;
     hashTagList.appendChild(hash);
     
     hashTagArr.push({text:`#${hashTag.value}`, id:hash.dataset.num,});
@@ -154,8 +157,22 @@ function makeHashtags(){
 //////////////////////////////////////////////
 
 
-
-
+////////////toast ui////////////////
+const Editor=toastui.Editor;
+const editor = new toastui.Editor({
+    el: document.querySelector('#editor'),
+    previewStyle: 'vertical',
+    
+    initialEditType:'wysiwyg',
+    hideModeSwitch: true,
+    
+        toolbarItems: [
+          ['heading', 'bold', 'italic', 'strike'],
+          ['hr', 'quote'],
+          ['ul', 'ol', 'task', 'indent', 'outdent'],
+          ]
+    
+});
 
 /////////////////발행////////////////////////////////////////////
 
@@ -163,13 +180,9 @@ submitButton.addEventListener('click',(e)=>{
     const now = new Date();	// 현재 날짜 및 시간
    
 
-    const totalContent = document.querySelector(".content");
+    
     const totalTitle = document.querySelector(".boardTitle");
 
-    const total = {
-        total_content : totalContent.innerText,
-        total_title :totalTitle.value,
-    }
     const TCs=document.querySelectorAll(".corab2");
         const TTs=document.querySelectorAll(".corab4");
         const corabContent = document.querySelectorAll("#corabContent");
@@ -180,9 +193,6 @@ submitButton.addEventListener('click',(e)=>{
     if (totalTitle.value == "") {
         alert('제목을 입력해주세요.');
         totalTitle.focus();
-      } else if (totalContent.value == "") {
-        alert('내용을 입력해주세요.');
-        totalContent.focus()
       } else if (hashTagArr.length <= 0) {
         alert('해시태그를 입력해주세요. ');
         hashTag.focus();
@@ -198,23 +208,95 @@ submitButton.addEventListener('click',(e)=>{
                 expCost : TCs[i].value, expTime:TTs[i].value});
         }
     
-        console.log(total);
+       
         console.log(costInfo);
         console.log(addressInformation);
         console.log(hashTagArr);
-        console.log(fileDOM.value);
-        console.log(now);
         
+        console.log(now);
+        console.log(editor.getHTML());
+        console.log(fileDOM.files[0]);
+        console.log(fileDOM);
+
+
+/*
+        data= {
+            title : totalTitle.value,
+            content : editor.getHTML(),
+            hashtag : hashTagArr,
+            category : category.value, //정해야됨
+            postMapList : costInfo,
+            mapList : addressInformation,
+            
+            id: Date.now(),
+            imageUrl: fileDOM.value,
+            createdAt: now,  // 시분초도 같이 보내야 하는지 물어보기
+    };
 
         /////////////////////////////ajax////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 
+axios.post("http//w",data)
+    .then((response) => {
+    // 응답 처리 -> contentLook 페이지로 이동
+  })
+    .catch((error) => {
+    // 예외 처리
+  })
+
+*/
+
+  
+  const addCustomer = () => {
+  const url ="http//w";
+  
+  const formData = new FormData();
+  formData.append("content",editor.getHTML());
+  formData.append("title", totalTitle);
+  
+  for(i=0;i<hashTagArr.length;i++){
+    formData.append("hashtag["+i+"]",hashTagArr[i]);
+  };
+  formData.append("category" , category.value);
+  for(i=0;i<costInfo.length;i++){
+    formData.append("postMapList["+i+"]",costInfo[i]);
+  }
+  for(i=0;i<addressInformation.length;i++){
+    formData.append("mapList["+i+"]",addressInformation[i]);
+  }
+  formData.append("mapList" , addressInformation);
+  formData.append("id", Date.now());
+  formData.append("createdAt", now);
+  formData.append("imageUrl", fileDOM.files[0]);
+  
+
+  const config = {
+    headers: {
+      "content-type": "multipart/form-data",
+    },
+  };
+  return axios.post(url, formData, config);
+  
+};
+addCustomer();
+
+
+
+
+        
+      }
+   
+}
+);
+
+
+/*
 
     $.ajax({
         url: "", // 클라이언트가 HTTP 요청을 보낼 서버의 URL 주소
         data: {
-            title : total.total_title,
-            content : total.total_content,
+            title : totalTitle,
+            content : editor.getHTML(),
             hashtag : hashTagArr,
             category : "맛집탐방", //정해야됨
             postMapList : costInfo,
@@ -243,23 +325,4 @@ submitButton.addEventListener('click',(e)=>{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-      }
-   
-}
-);
-
-
+*/
