@@ -29,7 +29,12 @@ function searchAddressToCoordinate(address) {
         }
 
         insertAddress(item.roadAddress, item.x, item.y);
+
+        //배열은 맵 전체 요소 배열. element는 객체.
+        
         addressInformation.push({keyword:item.roadAddress,lat:item.x,lng:item.y});
+        //formData.append("mapList",)
+        
     });
 }
 

@@ -13,11 +13,13 @@ fileDOM.addEventListener('change', (e) => {
   };
   reader.readAsDataURL(fileDOM.files[0]);
   console.log(fileDOM.files[0]);
+  
 });
 
 form.addEventListener('submit',(e)=>{
   e.preventDefault();
 })
+
 
 
 

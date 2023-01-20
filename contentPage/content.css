@@ -2,7 +2,7 @@ body{
     background-color: #F9F9F9;
     width: 100vw;
     height: 320vh;
-    margin:0;
+    margin: 0;
 }
 
 
@@ -12,11 +12,11 @@ body{
   .buttons {
     display: flex;
     margin-left:2vw ;
-    
+
     top: 0px;
-    
+
     background-color: #ffffff;
-    
+
     z-index: 100;
   }
 
@@ -27,7 +27,7 @@ body{
     margin:5vh 7vw ;
     height: 208vh;
     overflow: none;
-  
+
 }
 
 .buttons input:hover, .buttons button:hover,.filebox label i:hover{
@@ -75,11 +75,11 @@ body{
     display: none;
 }
 #cautionImage{
-    
+
     font-size: 11px;
     color: rgb(142, 142, 142);
     position: relative;
-    
+
     left: 10vw;
     bottom: 2vh;
 }
@@ -104,9 +104,9 @@ body{
     height: 450px;
     margin-right: 0px;
     margin-top:70px;
-    margin-left: 70px;
-    
-    
+    margin-left: 50px;
+
+
   }
 .putInPhoto{
     display: flex;
@@ -120,13 +120,13 @@ li{
     background-color: #FFF5F5;
     height: 18vh;
     width: 63vw;
-    
+
     border: 0;
     padding-left: 2vw;
     overflow: auto;
     margin-right: 1vw;
-   
-    
+
+
 }
 div.corab{
     border-bottom-left-radius: 20px;
@@ -145,7 +145,7 @@ input.corab{
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     margin-right: 1vw;
-   
+
 }
 input.corab::placeholder{
     color:#848484;
@@ -175,7 +175,7 @@ li.firstLi{
     text-align: center;
     font-size: 16px;
     padding-top: 2.2vh;
-    
+
 
 }
 .corab2{
@@ -236,7 +236,7 @@ li.firstLi{
     border: 0;
     background-color: #ffffff;
     font-size: 35px;
-    
+
 
 }
 
@@ -255,7 +255,7 @@ li.firstLi{
 .finalBox{
     display: flex;
     justify-content:space-around;
-    
+
     height: 10vh;
     width: 86vw;
     background-color: #ebeaea;
@@ -264,7 +264,7 @@ li.firstLi{
     margin-bottom: 0;
     position: relative;
     bottom:12vh;
-    
+
 }
 .finalBox div:first-child{
     display:flex;
@@ -275,16 +275,16 @@ li.firstLi{
 .finalBox div:last-child{
     display:flex;
     position: relative;
-    
+
     margin-top: 1.5vh;
-  
+
 
 }
 .finalBox p{
     margin-right: 1vw;
 }
 .noneBtn{
-    
+
     color:#F67777;
     font-size: 35px;
     position: relative;
@@ -298,12 +298,12 @@ li.firstLi{
     width: 25vw;
     height: 10vh;
     z-index: 300;
-    
+
     text-align: center;
     position: relative;
     bottom:2vh;
-    
-    
+
+
 }
 
 .finalBtn:hover{
@@ -325,11 +325,11 @@ li.firstLi{
 
 }
 .search{
-    
+
     display: flex;
     justify-content: center;
-    
-    
+
+
 }
 #address{
     width: 60vw;
@@ -351,7 +351,7 @@ li.firstLi{
     font-weight: 100;
 }
 .inputAddress{
-    
+
     margin-left: 8vw;
 }
 
@@ -360,8 +360,8 @@ li.firstLi{
 }
 
 .submitBtn{
-    
-   
+
+
     width: 70vw;
     margin-right: 1vw;
     margin-left: 9vw;
@@ -382,7 +382,7 @@ li.firstLi{
 }
 
 .hashTag{
-    
+
     margin-left: 8vw;
     width: 70vw;
     padding-left: 1vw;
@@ -393,18 +393,18 @@ li.firstLi{
 }
 
 .sun{
-    
-    
+
+
     width: 90%;
     border: 0.5px solid rgb(226, 226, 226);
-    
+
 }
 
 .hashTagList{
     display: flex;
     margin-left: 5vw;
     margin-top:4vh;
-   
+
 }
 .hashTagList li{
     margin-right: 1vw;
@@ -421,9 +421,9 @@ li.firstLi{
 
 #editor {
     /* border : 1px solid; */
-    width : 100%;
+    width : 97%;
     height: 90vh;
-    
+
     font-size: 20px;
     margin-top: 3vh;
 }
