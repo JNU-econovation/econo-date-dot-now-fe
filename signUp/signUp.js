@@ -21,8 +21,6 @@ const email = document.querySelector("#email1"),
 const check="";
 
 
-    
-
 
 function war1(){
     emailWarn.innerText="필수 정보입니다."
@@ -48,63 +46,44 @@ function war5(){
         certiWarn.innerText="필수 정보입니다."
         
     };
+
 function signIn(event){
     event.preventDefault();
-    const signInUserInfo = {
-        email : email.value,
-        psword : psword.value,
-        rePsword:rePsword.value,
-        userName:userName.value,
-        birthYear:birthYear.value,
-        birthMonth:birthMonth.value,
-        birthDay:birthDay.value,
-        phoneNumber:phoneNumber.value,
-        veriNumber:verification.value,
-
-    };
-
-    if(signInUserInfo.email == check){
-        war1();
-    }
-    else{
+    if (email.value == check ) {
+       war1();
+    } else if (psword.value == check) {
         emailWarn.innerText="";
-        }
-
-    if(signInUserInfo.psword == check){
         war2();
-    }
-    else{
-        pswordWarn.innerText="";
-        }
-
-    if(signInUserInfo.rePsword == check){
+    } else if(rePsword.value == check){
         war3();
-    }
-    else{
+        pswordWarn.innerText=""
+    } else if(rePsword.value !== psword.value ){
+        discode();
         repswordWarn.innerText="";
-        if(signInUserInfo.rePsword != signInUserInfo.psword ){
-            discode();
-        }
-        else{
-            discord.innerText="";
-            }
-        }
-
-    if(signInUserInfo.userName == check){
+    }else if(userName.value == check){
+        discord.innerText="";
         war4();
-    }
-    else{
+    }else if(verification.value == check){
         nameWarn.innerText="";
-        }
-
-    
-    if(signInUserInfo.veriNumber == check){
         war5();
-    }
-    else{
+    }else{
         certiWarn.innerText="";
-        }    
-        
-        console.log(signInUserInfo);}
+        const signInUserInfo = {
+            email : email.value,
+            psword : psword.value,
+            rePsword:rePsword.value,
+            userName:userName.value,
+            birthYear:birthYear.value,
+            birthMonth:birthMonth.value,
+            birthDay:birthDay.value,
+            phoneNumber:phoneNumber.value,
+            veriNumber:verification.value,
     
+        };
+        axios.post("", signInUserInfo);
+        //location.href="../boardPage"//로그인화면으로 가기.
+    }
+
+}
+
     signInBtn.addEventListener("click",signIn);
