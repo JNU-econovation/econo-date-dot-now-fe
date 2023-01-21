@@ -37,19 +37,33 @@ submitButton.addEventListener('click',(e)=>{
             
             formData.append("title", totalTitle.value);
             formData.append("content",editor.getHTML());
-            hashTagArr.forEach(hash=>{
-                formData.append("hashtag",hash.text);
-            })
+            //
+            let hasharr=[]
+            hashTagArr.forEach(element => {
+                hasharr.push(element.text);
+            });
+            formData.append("hashtag",JSON.stringify(hasharr));
+            
             formData.append("id", Date.now());
             formData.append("createdAt", now);
+//  ///////////////
             for(let i=0;i<TCs.length;i++){
-                formData.append("postMapList",JSON.stringify({ content : corabContent[i].innerText, keyword : corabLocation[i].value,
+                formData.append("postMapLists",JSON.stringify({ content : corabContent[i].innerText, keyword : corabLocation[i].value,
                     expCost : TCs[i].value, expTime:TTs[i].value}));
             }
+            formData.append("postMapList",formData.getAll("postMapLists"));
+            formData.delete("postMapLists");
+
+
+
+
             for(let i=0;i<addressInformation.length;i++){
-                formData.append("mapList",JSON.stringify({ keyword : addressInformation[i].keyword, lat : addressInformation[i].lat,
+                formData.append("mapLists",JSON.stringify({ keyword : addressInformation[i].keyword, lat : addressInformation[i].lat,
                     lng : addressInformation[i].lng}));
             }
+            formData.append("mapList",formData.getAll("mapLists"));
+            formData.delete("mapLists");
+
             
             const blob = new Blob([JSON.stringify(fileDOM.files[0])], {
                 type: 'application/json',
