@@ -48,6 +48,8 @@ function makeHashtags(){
     hash.appendChild(deleteHash);
     deleteHash.addEventListener('click',deleteHashTag);
     
+
+    
     
 }
 ////////////////////////////////////////////
