@@ -216,8 +216,12 @@ axios.get("api/v1/posts")
 const postsClicks = document.querySelectorAll(".box img:first-child");
 function transPost(link){
     window.location = link;
+};
+
+for(let i=0; i<postsClicks.length; i++){
+  postsClicks[i].addEventListener("click", () => {transPost(`/contentPage/:${dataarr[i].userid}/:${dataarr[i].id}`)});
 }
-postsClicks.forEach(postClick => postClick.addEventListener("click", () => {transPost(`/contentPage/:${dataarr[i].userid}/:${dataarr[i].id}`)}));
+
 
 /* uri 형식
 `/post/${postId}`

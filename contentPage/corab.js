@@ -77,11 +77,11 @@ submitButton.addEventListener('click',(e)=>{
             const config = {
               headers: {
                 "content-type": "multipart/form-data",
-                // "Authorization": token,
+                "Authorization": token,
               },
             };
             return axios.post(url, formData, config)
-                //.then(window.location = '/boardPage/');
+                .then(window.location = `/boardPage`);
             
           };
           addCustomer();
