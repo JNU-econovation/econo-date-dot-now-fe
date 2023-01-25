@@ -4,6 +4,7 @@
 
 const totalTitle = document.querySelector(".boardTitle");
 
+
 let final1=document.querySelector("#final1");
 let final2=document.querySelector("#final2");
 const trashBtn=document.querySelector("#dd");
@@ -21,20 +22,37 @@ let costInfo=[];
 //const map= document.querySelectorAll(map);
 
 /////////////////발행////////////////////////////////////////////
+
+
 let postmap=[];
-
-
-
-
+let maplist=[];
 submitButton.addEventListener('click',(e)=>{
-     
+    const TCs=document.querySelectorAll(".corab-cost");
+    const TTs=document.querySelectorAll(".corab-time");
+    const corabLocation=document.querySelectorAll("input.corab");
+    const corabContent=document.querySelectorAll("div.corab");
+
+
         const now = new Date();	// 현재 날짜 및 시간
 
-        console.log(corabContent[0].innerText);
-
+       
         const totalTitle = document.querySelector(".boardTitle");
         const addCustomer = () => {
             const url ="api/v1/posts/{Long:userId}";
+
+            for(let i=0;i<TCs.length;i++){
+                postmap.push({ content : corabContent[i].innerText, keyword : corabLocation[i].value,
+                    expCost : TCs[i].value, expTime:TTs[i].value});
+            }
+            console.log(postmap);
+            formData.append('postmapList',postmap);
+
+            for(let i=0;i<addressInformation.length;i++){
+                maplist.push({ keyword : addressInformation[i].keyword, lat : addressInformation[i].lat,
+                    lng : addressInformation[i].lng});
+            }
+            console.log(maplist);
+            formData.append('mapList',maplist);
             
             formData.append("title", totalTitle.value);
             formData.append("content",editor.getHTML());
@@ -43,7 +61,7 @@ submitButton.addEventListener('click',(e)=>{
             hashTagArr.forEach(element => {
                 hasharr.push(element.text);
             });
-            formData.append("hashtag",JSON.stringify(hasharr));
+            formData.append("hashtag",hasharr);
             
             formData.append("id", Date.now());
             formData.append("createdAt", now);
@@ -59,10 +77,11 @@ submitButton.addEventListener('click',(e)=>{
             const config = {
               headers: {
                 "content-type": "multipart/form-data",
-                "Authorization": token,
+                // "Authorization": token,
               },
             };
-            return axios.post(url, formData, config).then(window.location = '/boardPage/');
+            return axios.post(url, formData, config)
+                //.then(window.location = '/boardPage/');
             
           };
           addCustomer();
