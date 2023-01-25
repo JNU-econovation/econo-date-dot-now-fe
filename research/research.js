@@ -38,7 +38,7 @@ function makeContents(location,postOption,title,postContents,profilePhoto,profil
 
 
 ///////////////////////
-const x= document.querySelector("#X");
-x.addEventListener('click',()=>{
-    window.location = 'http://127.0.0.1:5500/homepage/home.html';
-})
+// const x= document.querySelector("#X");
+// x.addEventListener('click',()=>{
+//     window.location = history.go(-1);
+// })

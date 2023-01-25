@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="profile.css">
     <script src="profile.js" defer></script>
     <script src="https://kit.fontawesome.com/bf97a45c75.js" crossorigin="anonymous"></script>   
@@ -18,9 +18,9 @@
             <div class="Logo"><a href="">Date.now()</a>
             </div>
             <ul>
-                <li><a href="http://127.0.0.1:5500/homepage/home.html" id="home">홈</a></li>
-                <li><a href="http://127.0.0.1:5500/boardPage/board.html" id="gesi">게시판</a></li>
-                <li><a href="http://127.0.0.1:5500/profile/profile.html" id="profile">마이페이지</a></li>
+                <li><a href="/homepage/" id="home">홈</a></li>
+                <li><a href="/boardPage/" id="gesi">게시판</a></li>
+                <li><a href="/profile/" id="profile">마이페이지</a></li>
             </ul>
             <div class="logInSignUp">
                 
@@ -31,15 +31,15 @@
         <hr size="1px" color="#dadada">
         
     </header>
-    <div>
+    <div class="proflieDiv">
         <div class="sidebar">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div>마이페이지</div>
+            <div>프로필</div>
+            <div>비밀번호 수정</div>
+            <div>회원탈퇴</div>
         </div>
         <div class="profile">
-            <p>Profile</p>
+            <p id="letter">Profile</p>
             <div class="putInPhoto"> 
                 <img src="https://i0.wp.com/adventure.co.kr/wp-content/uploads/2020/09/no-image.jpg" 
             class="image-box" />
@@ -49,13 +49,14 @@
                 accept=".gif, .jpg, .png" name="images" >
             
             </input>
+            <label for="ex_file2" class="imgfile">
+                <i class="fa-solid fa-camera"></i>
             <div class="fixed">
                 <p>이름</p>
                 <p>김응애</p>
                 <p>생년월일</p>
                 <p>2002.03.12</p>
-                <p>성별</p>
-                <p>여성</p>
+                
                 <p>전화번호</p>
                 <p>01023443938</p>
             </div>
@@ -65,7 +66,7 @@
                 <p>닉네임</p>
                 <p>루루루루</p>
             </div>
-            <div>
+            <div class="modi">
                 <button>수정</button>
                 
             </div>

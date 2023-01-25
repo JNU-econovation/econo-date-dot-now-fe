@@ -25,7 +25,21 @@ const   slide= document.querySelectorAll(".sliders li"),
     prevBtn= document.querySelector("#leftI"), 
     nextBtn= document.querySelector("#rightI"),
     login=document.querySelector(".logInSignUp a:first-child");
-    const category=document.querySelector(".questionWhere")
+    const category=document.querySelector(".questionWhere");
+    
+    let token=localStorage.getItem(jwt-token);
+    const loginletter= document.querySelector(".lo");
+    const signupletter= document.querySelector(".si");
+    if(token){
+        loginletter.innerText="로그아웃";
+        signupletter.innerText="";
+        
+    }
+
+
+
+
+
 
 
 
@@ -243,5 +257,6 @@ const hwBtn=document.querySelector("#hWBtn");
 hwBtn.addEventListener('click',()=>{
     window.location = 'http://localhost:3000/research/';
 })
+
 
 
