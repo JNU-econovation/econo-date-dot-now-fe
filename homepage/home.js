@@ -1,18 +1,35 @@
+//const { default: axios } = require('axios');
+
+
 const   slide= document.querySelectorAll(".sliders li"),
+    slideP= document.querySelectorAll(".p"),
+    slideP2= document.querySelectorAll(".p2"),
     slides=document.querySelector(".sliders"),
+    myTaste=document.querySelector("#myTaste"),
+    anotherTaste=document.querySelector("#anotherTaste"),
+   
     slideLetter=document.querySelector("slideLetter"),
-    slider2Img=document.querySelector(".sliders2 li img"),
+    sliderImg=document.querySelectorAll(".sliders li img"),
+    slider2P=document.querySelectorAll(".sliders2 li p"),
+    slider2A=document.querySelectorAll(".sliders2 li a"),
+    slider2Img=document.querySelectorAll(".sliders2 li img"),
+
+
     slider2Img2=document.querySelector("#section22"),
     slider2Img3=document.querySelector("#section23"),
     slider2Img4=document.querySelector("#section24"),
     slider2Img5=document.querySelector("#section25"),
+
     slideWidth=340,
     slideMargin=20,
     prevBtn= document.querySelector("#leftI"), 
-    nextBtn= document.querySelector("#rightI");
-    
+    nextBtn= document.querySelector("#rightI"),
+    login=document.querySelector(".logInSignUp a:first-child");
+    const category=document.querySelector(".questionWhere")
 
-let currentIdx =0,
+
+
+    let currentIdx =0,
     slideCount=slide.length;
 
     makeClone();
@@ -52,21 +69,7 @@ function updateWidth(){
 
 
 
-slider2Img.addEventListener('click',function(){
-    window.location = 'https://blog.naver.com/kky1373';
-});
-slider2Img2.addEventListener('click',function(){
-    window.location = 'https://fontawesome.com/icons/arrow-right?s=thin&f=classic';
-});
-slider2Img3.addEventListener('click',function(){
-    window.location = 'https://fontawesome.com/icons/arrow-right?s=thin&f=classic';
-});
-slider2Img4.addEventListener('click',function(){
-    window.location = 'https://fontawesome.com/icons/arrow-right?s=thin&f=classic';
-});
-slider2Img5.addEventListener('click',function(){
-    window.location = 'https://fontawesome.com/icons/arrow-right?s=thin&f=classic';
-});
+
 //추천 게시글 링크 불러오기
 
 
@@ -96,10 +99,149 @@ function moveSlide(num){
     };
 
 }
+slider2Img.forEach(img=>{
+    img.addEventListener('click',function(){
+        window.location = '/contentLook/';
+    });
+})
+
+
+
+
+
+
+
+    
+    myTaste.addEventListener('click',(e)=>{
+        let data=category.value;
+        console.log(data);
+        axios.post('api/v1/categorys',data)
+        .then(res=>{
+            console.log(res);
+        })
+    })
+    
+    
+   
+
+
+    
+
+
+    const getContents = () => {
+        try {
+          return axios.get('api/v1/home/posts/event');
+        } catch (error) {
+          console.error(error)
+        }
+      };
+      
+      const tasteSort = () => {
+        const contents = getContents()
+            contents
+            .then(res => {
+            if (res.data) {
+                const innerContents = ()=>{
+                    let i=0,k=0,h=0;
+                    slideP.forEach((p)=>{
+                        
+                        p.innerText = data[i].title.substr(0,20)+"...";
+                        i++;
+                    });
+                    slideP2.forEach((p)=>{
+                        p.innerText = data[k].content.substr(0,40)+"...";
+                        k++;
+                    })
+                    sliderImg.forEach((p)=>{
+                        p.src = data[h].imageUrl;
+                        h++;
+                    })
+            
+                };
+                
+                myTaste.addEventListener('click',innerContents);
+            }
+            })
+            .catch(error => {
+            console.log(error);
+            })
+      };
+      
+      tasteSort();
+
+      const origin = () => {
+        try {
+          return axios.get('api/v1/home/posts/recommend');
+        } catch (error) {
+          console.error(error)
+        }
+      };
+      
+      const originContent = () => {
+        const contents = origin()
+            contents
+            .then(res => {
+            if (res.data) {
+                const innerContents = ()=>{
+                    let i=0,k=0,h=0;
+                    slideP.forEach((p)=>{
+                        
+                        p.innerText = data[i].title.substr(0,20)+"...";
+                        i++;
+                    });
+                    slideP2.forEach((p)=>{
+                        p.innerText = data[k].content.substr(0,40)+"...";
+                        k++;
+                    })
+                    sliderImg.forEach((p)=>{
+                        p.src = data[h].imageUrl;
+                        h++;
+                    })
+            
+                };
+                innerContents();
+                anotherTaste.addEventListener('click',innerContents);
+
+                const innerContentsLast = ()=>{
+                    let i=0,k=0,h=0;
+                    slider2P.forEach((p)=>{
+                        
+                        p.innerText = data[i].title.substr(0,20)+"...";
+                        i++;
+                    });
+                    slider2A.forEach((p)=>{
+                        p.innerText = data[k].content.substr(0,40)+"...";
+                        k++;
+                    })
+                    slider2Img.forEach((p)=>{
+                        p.src = data[h].imageUrl;
+                        h++;
+                    })
+            
+                };
+                innerContentsLast();
+
+
+            }
+            })
+            .catch(error => {
+            console.log(error);
+            })
+      };
+      
+      originContent();
+  
+    
+    
+    
+    
+
 ////////////////////
 
 const hwBtn=document.querySelector("#hWBtn");
 
 hwBtn.addEventListener('click',()=>{
-    window.location = 'http://127.0.0.1:5500/research/research.html';
+    window.location = 'http://localhost:3000/research/';
 })
+
+

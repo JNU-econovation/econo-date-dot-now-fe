@@ -514,3 +514,20 @@ li.firstLi{
     
 }
 
+.deleteNmodi{
+    display: flex;
+   position: absolute;
+   left: 85vw;
+   font-size: 13px;
+}
+.deleteNmodi a{
+    position: relative;
+    top: 1.75vh;
+    margin-right: 1vw;
+    
+}
+.deleteNmodi a::after{
+    content: "|";
+    margin-left: 1vw;
+    color: #aeaeae;
+}

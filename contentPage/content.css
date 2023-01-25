@@ -128,13 +128,13 @@ li{
 
 
 }
-div.corab{
+#aa, #real2{
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     padding-top: 3vh;
     padding-bottom: 3vh;
 }
-input.corab{
+#cc, #real{
     font-size: 16px;
     margin-left: 1vw;
     background-color: #FFE4E4;
@@ -191,7 +191,7 @@ li.firstLi{
 
 
 }
-#firstcorab{
+#firstcorab, #fir{
     width: 7.76vw;
     height: 6.7vh;
     background-color: #FFF5F5;
@@ -201,6 +201,7 @@ li.firstLi{
     border: 0;
     text-align: center;
     font-size: 16px;
+    
 }
 
 .corab3{
@@ -215,7 +216,14 @@ li.firstLi{
 
 
 }
-.corab4,#secondcorab{
+div#cc p{
+    margin-top: 2vh;
+    
+}
+div#cc{
+    overflow: hidden;
+}
+.corab4,#secondcorab,#se{
     width: 7.76vw;
     height: 6.7vh;
     background-color: #FFF5F5;
@@ -340,6 +348,17 @@ li.firstLi{
     background-color: #e9e5e595;
     padding-left: 20px;
 }
+.corabBox hr{
+    width: 75vw;
+    background:#e0e0e0;
+    border:0;
+    height: 1.5px;
+    position: relative;
+    right: 3vw;
+    margin-bottom: 3vh;
+}
+
+
 #submit{
     width: 2.5vw;
     height: 5.5vh;

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="board.css">
     <script src="board.js" defer></script>
     <title>Board</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://kit.fontawesome.com/bf97a45c75.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -15,9 +16,9 @@
             <div class="Logo"><a href="">Date.now()</a>
             </div>
             <ul>
-                <li><a href="http://127.0.0.1:5500/homepage/home.html" id="home">홈</a></li>
-                <li><a href="http://127.0.0.1:5500/boardPage/board.html" id="gesi">게시판</a></li>
-                <li><a href="http://127.0.0.1:5500/profile/profile.html" id="profile">마이페이지</a></li>
+                <li><a href="http://localhost:3000/homepage/" id="home">홈</a></li>
+                <li><a href="http://localhost:3000/boardPage/" id="gesi">게시판</a></li>
+                <li><a href="http://localhost:3000/profile/" id="profile">마이페이지</a></li>
             </ul>
             <div class="logInSignUp">
                 <a href="http://127.0.0.1:5500/login/login.html">로그인</a>
@@ -39,7 +40,7 @@
             <div class="sort">
                 <a>정렬</a>
                 <form action="">
-                    <select name="" id="">
+                    <select name="" id="sort">
                         <option value="최신순">최신순</option>
                         <option value="추천순">추천순</option>
                         <option value="오래된 순">오래된 순</option>

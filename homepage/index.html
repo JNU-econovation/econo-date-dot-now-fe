@@ -7,7 +7,10 @@
     <title>Home</title>
     <link rel="stylesheet" href="home.css">
     <script src="home.js" defer></script>
+    
     <script src="homeQuote.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
     <script src="https://kit.fontawesome.com/bf97a45c75.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -16,21 +19,22 @@
             <div class="Logo"><a href="">Date.now()</a>
             </div>
             <ul>
-                <li><a href="http://127.0.0.1:5500/homepage/home.html" id="home">홈</a></li>
-                <li><a href="http://127.0.0.1:5500/boardPage/board.html" id="gesi">게시판</a></li>
-                <li><a href="http://127.0.0.1:5500/profile/profile.html" id="profile">마이페이지</a></li>
+                <li><a href="/homepage"  id="home">홈</a></li>
+                <li><a href="/boardPage"  id="gesi">게시판</a></li>
+                <li><a href="/profile" id="profile">마이페이지</a></li>
             </ul>
             <div class="logInSignUp">
-                <a href="http://127.0.0.1:5500/login/login.html">로그인</a>
+                <a href="/login/" class="login">로그인</a>
                 <a>/</a>
-                <a href="http://127.0.0.1:5500/signUp/signup.html">회원가입</a>
+                <a href="/signUp" class="login">회원가입</a>
+                <a href=" " class="logout">로그아웃</a>
             </div>
             
         </div>
         <hr size="1px" color="#826695">
         
-        <div class="headerWhere" id="hWLetter"><a>어디로 떠나세요?</a></div>
-        <div  class="headerWhere"><button id="hWBtn"><a>검색어를 입력하세요</a></button>
+        <div class="headerWhere" id="hWLetter" ><a>어디로 떠나세요?</a></div>
+        <div  class="headerWhere"><button id="hWBtn" onClick='/research/'><a>검색어를 입력하세요</a></button>
         </div>
 
     </header>
@@ -63,25 +67,28 @@
             <div class="slideWrapper">
                 <ul class="sliders">
                     <li id="section1"><img src="https://placeimg.com/340/250" alt="">
-                        <p>새로운 나의 도시 < 펠리칸피딩+스타뷔페> 뉴캐슬,포</p>
-                        <p>여기에는 게시글 내용 가져오기</p>
+                        <p class="p">새로운 나의 도시 < 펠리칸피딩+스타뷔페> 뉴캐슬,포</p>
+                        <p class="p2">여기에는 게시글 내용 가져오기</p>
+                        <br>
                         <a href="">자세히 보기</a>
                     </li>
                     <li id="section2"><img src="https://placeimg.com/340/250" alt="">
-                        <p>새로운 2222 < 펠리칸피딩+스타뷔페> 뉴캐슬,포</p>
-                        <p>여기에는 게시글 내용 가져오기</p>
+                        <p class="p">새로운 2222 < 펠리칸피딩+스타뷔페> 뉴캐슬,포</p>
+                        <p class="p2">여기에는 게시글 내용 가져오기</p>
+                        <br>
                         <a href="">자세히 보기</a></li>
                     <li id="section3"><img src="https://placeimg.com/340/250" alt="">
-                        <p>새로운 3333 < 펠리칸피딩+스타뷔페> 뉴캐슬,포</p>
-                        <p>여기에는 게시글 내용 가져오기</p>
+                        <p class="p">새로운 3333 < 펠리칸피딩+스타뷔페> 뉴캐슬,포</p>
+                        <p class="p2">여기에는 게시글 내용 가져오기</p>
+                        <br>
                         <a href="">자세히 보기</a></li>
                     <li id="section4"><img src="https://placeimg.com/340/250" alt="">
-                        <p>새로운 4444 < 펠리칸피딩+스타뷔페> 뉴캐슬,포</p>
-                        <p>여기에는 게시글 내용 가져오기</p>
+                        <p class="p">새로운 4444 < 펠리칸피딩+스타뷔페> 뉴캐슬,포</p>
+                        <p class="p2">여기에는 게시글 내용 가져오기</p><br>
                         <a href="">자세히 보기</a></li>
                     <li id="section5"><img src="https://placeimg.com/340/250" alt="">
-                        <p>새로운 5555 < 펠리칸피딩+스타뷔페> 뉴캐슬,포</p>
-                        <p>여기에는 게시글 내용 가져오기</p>
+                        <p class="p">새로운 5555 < 펠리칸피딩+스타뷔페> 뉴캐슬,포</p>
+                        <p class="p2">여기에는 게시글 내용 가져오기</p><br>
                         <a href="">자세히 보기</a></li>
             
 
@@ -133,7 +140,7 @@
 
     </main>
     
-    
+   
     
 </body>
 </html>

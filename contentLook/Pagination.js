@@ -41,25 +41,25 @@ function makeComents(img,userName,date,contents){
     comentList.appendChild(content);
 }
 
-const goPrevPage = () => {
-    page -= maxButton;
-    render(page);
-  };
+// const goPrevPage = () => {
+//     page -= maxButton;
+//     render(page);
+//   };
   
-  const goNextPage = () => {
-    page += maxButton;
-    render(page);
-  };
+//   const goNextPage = () => {
+//     page += maxButton;
+//     render(page);
+//   };
   
-  const prev = document.createElement("button");
-  prev.classList.add("button", "prev");
-  prev.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
-  prev.addEventListener("click", goPrevPage);
+//   const prev = document.createElement("button");
+//   prev.classList.add("button", "prev");
+//   prev.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
+//   prev.addEventListener("click", goPrevPage);
   
-  const next = document.createElement("button");
-  next.classList.add("button", "next");
-  next.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
-  next.addEventListener("click", goNextPage);
+//   const next = document.createElement("button");
+//   next.classList.add("button", "next");
+//   next.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
+//   next.addEventListener("click", goNextPage);
 
 
 
@@ -68,77 +68,77 @@ const goPrevPage = () => {
 
 
 
-//밑에 페이지 태그
-const makeButton = (id) => {
-    const button = document.createElement("Button");
-    button.classList.add("button");
-    button.dataset.num = id;
-    button.innerText = id;
-    //button이라는 버튼을 만들고 클래스는 button, num은 id값, html에 id값을 넣어줌
-    button.addEventListener("click", (e) => {
-        //Array.prototype.forEach.call(pageButtons.children, (button) => {
-        [].forEach.call(pageButtons.children, (button) => {
-         // pageButtons.forEach((button) => {
-        if (button.dataset.num) button.classList.remove("active");
-        });// 콜백함수 사용이유가 
-        e.target.classList.add("active");
-        renderContent(parseInt(e.target.dataset.num));
-    });//버튼 클릭 시 페이지버튼의 자식요소들마다 콜백함수 실행,
-    // 콜백함수는 버튼의 num이 0이 아니면() 버튼의 클래스 active지움.
-    // 이때 클래스 active는 색깔 빨갛게 변하는 것.
-    // e.target은 특정 이벤트가 발생하는 태그 가져옴.->버튼 클릭 시 active 클래스 됨.(빨게짐)
-    //renderContent함수 실행(클릭한 버튼의 num을 renderContent함수에 전달.)
-    //                                 ->
-    return button;
-    };
-//위에 button -> buttons 로 바꾸고 buttons.forEach(button넣기) 로 
-///////////////////////////////////////////////////
+// //밑에 페이지 태그
+// const makeButton = (id) => {
+//     const button = document.createElement("Button");
+//     button.classList.add("button");
+//     button.dataset.num = id;
+//     button.innerText = id;
+//     //button이라는 버튼을 만들고 클래스는 button, num은 id값, html에 id값을 넣어줌
+//     button.addEventListener("click", (e) => {
+//         //Array.prototype.forEach.call(pageButtons.children, (button) => {
+//         [].forEach.call(pageButtons.children, (button) => {
+//          // pageButtons.forEach((button) => {
+//         if (button.dataset.num) button.classList.remove("active");
+//         });// 콜백함수 사용이유가 
+//         e.target.classList.add("active");
+//         renderContent(parseInt(e.target.dataset.num));
+//     });//버튼 클릭 시 페이지버튼의 자식요소들마다 콜백함수 실행,
+//     // 콜백함수는 버튼의 num이 0이 아니면() 버튼의 클래스 active지움.
+//     // 이때 클래스 active는 색깔 빨갛게 변하는 것.
+//     // e.target은 특정 이벤트가 발생하는 태그 가져옴.->버튼 클릭 시 active 클래스 됨.(빨게짐)
+//     //renderContent함수 실행(클릭한 버튼의 num을 renderContent함수에 전달.)
+//     //                                 ->
+//     return button;
+//     };
+// //위에 button -> buttons 로 바꾸고 buttons.forEach(button넣기) 로 
+// ///////////////////////////////////////////////////
 
 
 
 
 
-///////////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////
 
 
-const renderContent = (page) => {
-    // 목록 리스트 초기화
-    while (comentList.hasChildNodes()) {
-        comentList.removeChild(comentList.lastChild);
-      }
+// const renderContent = (page) => {
+//     // 목록 리스트 초기화
+//     while (comentList.hasChildNodes()) {
+//         comentList.removeChild(comentList.lastChild);
+//       }
     
-    // 글의 최대 개수를 넘지 않는 선에서, 화면에 최대 10개의 글 생성
-    for (let id = (page - 1) * maxContent; id <= page * maxContent && id <= numOfContent; id++) {
-        makeComents("https://placeimg.com/50/50", `${id}${commentArr[id].userName}`, commentArr[id].date,commentArr[id].content );
+//     // 글의 최대 개수를 넘지 않는 선에서, 화면에 최대 10개의 글 생성
+//     for (let id = (page - 1) * maxContent; id <= page * maxContent && id <= numOfContent; id++) {
+        
 
 
-    }
-  };
+//     }
+//   };
   
-  const renderButton = (page) => {
-    // 버튼 리스트 초기화
-    while (pageButtons.hasChildNodes()) {
-        pageButtons.removeChild(pageButtons.lastChild);
-      }
+//   const renderButton = (page) => {
+//     // 버튼 리스트 초기화
+//     while (pageButtons.hasChildNodes()) {
+//         pageButtons.removeChild(pageButtons.lastChild);
+//       }
     
-    // 화면에 최대 10개의 페이지 버튼 생성
-    for (let id = page; id < page + maxButton && id <= maxPage; id++) {
-        pageButtons.appendChild(makeButton(id));
-    }
-    // 첫 버튼 활성화(class="active")
-    pageButtons.children[0].classList.add("active");
+//     // 화면에 최대 10개의 페이지 버튼 생성
+//     for (let id = page; id < page + maxButton && id <= maxPage; id++) {
+//         pageButtons.appendChild(makeButton(id));
+//     }
+//     // 첫 버튼 활성화(class="active")
+//     pageButtons.children[0].classList.add("active");
   
-    pageButtons.prepend(prev);
-    pageButtons.append(next);
+//     pageButtons.prepend(prev);
+//     pageButtons.append(next);
   
-    // 이전, 다음 페이지 버튼이 필요한지 체크
-    if (page - maxButton < 1) pageButtons.removeChild(prev);
-    if (page + maxButton > maxPage) pageButtons.removeChild(next);
-  };
+//     // 이전, 다음 페이지 버튼이 필요한지 체크
+//     if (page - maxButton < 1) pageButtons.removeChild(prev);
+//     if (page + maxButton > maxPage) pageButtons.removeChild(next);
+//   };
   
-  const render = (page) => {
-    renderContent(page);
-    renderButton(page);
-  };
+//   const render = (page) => {
+//     renderContent(page);
+//     renderButton(page);
+//   };
 
-  render(page);
+//   render(page);
