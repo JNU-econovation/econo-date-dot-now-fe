@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" 
-	src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ku6p4pvckf&submodules=geocoder">
-</script>
+    
 
     <link rel="stylesheet" href="content.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"/>
     <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"/>
     
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+   
     <title>Document</title>
     
 </head>
@@ -74,16 +73,17 @@
                     </div>
     
                     <div>
-                        <input class="corab corab-location" id="cc" contenteditable="true" placeholder="위치 혹은 장소를 입력해 주세요." />
+                        <input class="corab corab-location" id="real" contenteditable="true" placeholder="위치 혹은 장소를 입력해 주세요." />
     
-                        <div class="corab corab-content" id="aa" name="content" contenteditable="true"></div>
+                        <div class="corab corab-content" id="real2" name="content" contenteditable="true"></div>
                     </div>
     
-                    <div class="plusBtn corab-plus-btn">
+                    <button class="plusBtn corab-plus-btn">
                         <i class="fa-solid fa-circle-plus"></i>
-                    </div>
+                    </button>
     
                 </li>
+                <hr>
             </ul>
     
             <div class="finalBtn calculate-button"><p>총 예상 비용&총 예상 시간 확인하기</p></div>
@@ -141,16 +141,19 @@
     
         </section>
     
-    
-    <script src="corab.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="controlCorab.js" defer></script>
+        <script src="corab.js" defer></script>
     <script src="map.js" defer></script>
     <script src="hashtag.js" defer></script>
     <script src="content.js" defer></script>
     <script src="calculateCorab.js" defer></script>
-    <script src="controlCorab.js" defer></script>
-    <script src="toast.js" defer></script>
-   
     
+    <script src="toast.js" defer></script>
+    <script src="https://unpkg.com/json-form-data@^1.7.0/dist/jsonToFormData.min.js"></script>
+    <script type="text/javascript" 
+	src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ku6p4pvckf&submodules=geocoder">
+</script>
    
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="https://kit.fontawesome.com/bf97a45c75.js" crossorigin="anonymous"></script>

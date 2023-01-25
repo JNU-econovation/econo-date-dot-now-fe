@@ -80,8 +80,12 @@ function signIn(event){
             veriNumber:verification.value,
     
         };
-        axios.post("", signInUserInfo);
-        //location.href="../boardPage"//로그인화면으로 가기.
+        axios.post("/api/v1/user/signup", signInUserInfo)
+        .then((res)=>{
+            console.log(res);
+            location.href="/login"
+        })
+        
     }
 
 }

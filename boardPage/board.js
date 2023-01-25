@@ -1,13 +1,64 @@
+//const { default: axios } = require('axios');
+
+
+
+//
 const posts = document.querySelector(".post");
+const sort = document.querySelector(".sort");
+const sortOption1 = document.querySelector(".sort option:first-child");
+const sortOption2 = document.querySelector(".sort option:nth-child(2)");
+const sortOption3 = document.querySelector(".sort option:last-child");
+
 const pageButtons = document.querySelector(".pageButtons");
 
-const numOfContent = 112;
+let numOfContent = 12;
 const showContent = 9;
 const showButton = 10;
 let maxContent= 9;
 let maxButton = 10;
 const maxPage = Math.ceil(numOfContent / maxContent);
 let page = 1;
+let dataarr=[];
+
+
+sort.addEventListener('change',(e)=>{
+  if(sortOption1.value==="최신순"){
+    console.log(e.target.value);
+    axios.get("api/v1/posts?sort=createdAt,desc")
+      .then((res)=>{
+        dataarr=res.data;
+        render(page);
+      })
+      .catch(err=>{
+        console.log(err);
+      });
+  }
+  else if(sortOption2.value==="추천순"){
+    console.log(e.target.value);
+    axios.get("api/v1/posts?sort=recommendCnt,desc")
+      .then((res)=>{
+        dataarr=res.data;
+        render(page);
+      })
+      .catch(err=>{
+        console.log(err);
+      });
+  }
+    else if(sortOption3.value==="오래된순"){
+      console.log(e.target.value);
+      axios.get("api/v1/posts?sort=createdAt,asc")
+      .then((res)=>{
+        dataarr=res.data;
+        render(page);
+      })
+      .catch(err=>{
+        console.log(err);
+      });
+    }
+  
+})
+
+
 
 
 function makeContents(location,postOption,title,postContents,profilePhoto,profileName,userLook){
@@ -110,8 +161,8 @@ const renderContent = (page) => {
     
     // 글의 최대 개수를 넘지 않는 선에서, 화면에 최대 10개의 글 생성
     for (let id = (page - 1) * maxContent + 1; id <= page * maxContent && id <= numOfContent; id++) {
-        makeContents("동명동","맛집탐방",`${id}감성카페랑 제목`,"안녕하세요 포스트 내용이 들어갈 자리 입니다.","https://placeimg.com/25/25","에코노","100" );
-
+        makeContents(dataarr[id].postMapList.keyword,dataarr[id].category,dataarr[id].title,dataarr[id].content,"https://placeimg.com/25/25",dataarr[id].writer,dataarr[id].viewCnt);
+        
 
     }
   };
@@ -142,7 +193,21 @@ const renderContent = (page) => {
     renderButton(page);
   };
 
-  render(page);
+  
+//////
+axios.get("api/v1/posts")
+  .then((res)=>{
+    console.log(res.data);
+    numOfContent=res.data.length;
+    dataarr=res.data;
+    render(page);
+
+  })
+    
+  .catch(err=>{
+    console.log(err);
+  });
+
 
 
 ////////////////////////////////////////////////////////
@@ -152,7 +217,7 @@ const postsClicks = document.querySelectorAll(".box img:first-child");
 function transPost(link){
     window.location = link;
 }
-postsClicks.forEach(postClick => postClick.addEventListener("click", () => {transPost('https://nohack.tistory.com/125')}));
+postsClicks.forEach(postClick => postClick.addEventListener("click", () => {transPost(`/contentPage/:${dataarr[i].userid}/:${dataarr[i].id}`)}));
 
 /* uri 형식
 `/post/${postId}`
@@ -161,5 +226,11 @@ postsClicks.forEach(postClick => postClick.addEventListener("click", () => {tran
 
 const mainButton = document.querySelector(".mainButton button");
 mainButton.addEventListener('click',function(){
-  window.location = 'http://127.0.0.1:5500/contentPage/content.html';
+  window.location = '/contentPage';
 });
+
+const searchIcon = document.querySelector("#searchIcon");
+searchIcon.addEventListener('click',function(){
+  window.location = '/research';
+});
+

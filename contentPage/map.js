@@ -31,10 +31,24 @@ function searchAddressToCoordinate(address) {
         insertAddress(item.roadAddress, item.x, item.y);
 
         //배열은 맵 전체 요소 배열. element는 객체.
+        let token=localStorage.getItem(token);
         
-        addressInformation.push({keyword:item.roadAddress,lat:item.x,lng:item.y});
-        //formData.append("mapList",)
-        
+        //addressInformation.push();
+        axios.post("api/v1/posts/{postId}/maps",{keyword:item.roadAddress,lat:item.x,lng:item.y},{headers: {"Authorization": token,}})
+            .then(res=>{
+                console.log(res);
+            })
+            .catch(err=>{
+                console.log(err);
+            })
+
+            // axios.delete("api/v1/posts/{postId}/maps",addressInformation)
+            // .then(res=>{
+            //     console.log(res);
+            // })
+            // .catch(err=>{
+            //     console.log(err);
+            // })
     });
 }
 

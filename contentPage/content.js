@@ -28,3 +28,4 @@ form.addEventListener('submit',(e)=>{
 
 // 여기 말고 보낼때 object 말고 폼데이터 형식으로 바디에 넣어서 보내주기(데이터 타입이 폼데이터로 바껴야함.)
 
+

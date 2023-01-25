@@ -1,3 +1,4 @@
+//const { default: axios } = require('axios');
 
 /*
 var polyline = new naver.maps.Polyline({
@@ -32,11 +33,17 @@ for (var i = 0; i < point.length; i++) {
         
     });
     
-    const locations=[ { place:"광주광역시 동구 장동로 51-1", lat: '35.1472041', lng: '126.9272577' },
-    { place:"광주 남구 양림동 24-63", lat: '35.14010072213278', lng: '126.91678475522582' },{ place:"광주광역시 남구 봉선로133번길 4 금호타운", lat: '35.1241449', lng: '126.9066826' }
-];
-
-
+    // const locations=[ { place:"광주광역시 동구 장동로 51-1", lat: '35.1472041', lng: '126.9272577' },
+    // { place:"광주 남구 양림동 24-63", lat: '35.14010072213278', lng: '126.91678475522582' },{ place:"광주광역시 남구 봉선로133번길 4 금호타운", lat: '35.1241449', lng: '126.9066826' }
+//];
+let dataarr=[];
+axios.get('/api/v1/posts/{Long:postId}')
+    .then(res=>{
+        dataarr=res.data;
+    })
+    .catch(err=>{
+        console.log(err);
+    })
 
 
 
@@ -49,15 +56,15 @@ for (var i = 0; i < point.length; i++) {
         let infoWindows = new Array(); // 정보창을 담는 배열
         
         var map = new naver.maps.Map('map', {
-            center: new naver.maps.LatLng(locations[1].lat, locations[1].lng), //지도 시작 지점
+            center: new naver.maps.LatLng(dataarr.map[1].lat, dataarr.map[1].lng), //지도 시작 지점
             zoom: 14
         });
         
         
         path = [];
-        for (var i=0, ii=locations.length; i<ii; i++) {
-           var position = new naver.maps.LatLng(locations[i].lat , locations[i].lng);
-           path.push({lat:locations[i].lat , lng: locations[i].lng});
+        for (var i=0, ii=dataarr.map.length; i<ii; i++) {
+           var position = new naver.maps.LatLng(dataarr.map[i].lat , dataarr.map[i].lng);
+           path.push({lat:dataarr.map[i].lat , lng: dataarr.map[i].lng});
         }
       
       polyline = new naver.maps.Polyline({
@@ -70,13 +77,13 @@ for (var i = 0; i < point.length; i++) {
       });
         
         
-        for (var i = 0; i < locations.length; i++) {
+        for (var i = 0; i < dataarr.map.length; i++) {
             // 지역을 담은 배열의 길이만큼 for문으로 마커와 정보창을 채워주자 !
     
             var marker = new naver.maps.Marker({
                 map: map,
-                title: locations[i].place, // 지역구 이름 
-                position: new naver.maps.LatLng(locations[i].lat , locations[i].lng), // 지역구의 위도 경도 넣기 
+                title: dataarr.map[i].place, // 지역구 이름 
+                position: new naver.maps.LatLng(dataarr.map[i].lat ,dataarr.map[i].lng), // 지역구의 위도 경도 넣기 
                 icon: {
                     url: 'contentLook/pngegg.png',
                 }
